@@ -9,8 +9,8 @@ if [ -d /opt/ssh/config ]; then
 fi
 
 # ensure all our users exist
-if [ -d /opt/ssh/users ]; then
-	for USER in `ls -1 /opt/ssh/users`; do
+if [ -d /opt/ssh/authorized_keys ]; then
+	for USER in `ls -1 /opt/ssh/authorized_keys`; do
 		ID=`id -u "$USER"`
 		HOMEDIR="/home/$USER"
 		if [ -z "$ID" ]; then

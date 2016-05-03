@@ -1,3 +1,3 @@
 FROM panenka76/sftp
 
-COPY users /opt/ssh/users
+COPY authorized_keys /opt/ssh/authorized_keys

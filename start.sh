@@ -12,10 +12,10 @@ fi
 if [ -d /opt/ssh/users ]; then
 	for USER in `ls -1 /opt/ssh/users`; do
 		ID=`id -u "$USER"`
-		if [ -z "$ID" ]; then
-			useradd -g sftponly "$USER"
-		fi
 		HOMEDIR="/home/$USER"
+		if [ -z "$ID" ]; then
+			useradd -g sftponly -d $HOMEDIR "$USER"
+		fi
 		mkdir -p $HOMEDIR && chown -R "$USER" $HOMEDIR
 		chown root:root $HOMEDIR
 		mkdir -p $HOMEDIR/upload

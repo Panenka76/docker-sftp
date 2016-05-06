@@ -3,11 +3,6 @@
 # ensure the sftponly group exists
 getent group sftponly || groupadd sftponly
 
-# copy additional config to /etc/ssh
-if [ -d /opt/ssh/config ]; then
-	cp /opt/ssh/config/* /etc/ssh/
-fi
-
 # ensure all our users exist
 if [ -d /opt/ssh/authorized_keys ]; then
 	for USER in `ls -1 /opt/ssh/authorized_keys`; do
@@ -24,4 +19,4 @@ if [ -d /opt/ssh/authorized_keys ]; then
 	done
 fi
 
-/usr/sbin/sshd -e -D
+/usr/sbin/sshd -e -D -f /opt/ssh/config/sshd

@@ -6,7 +6,7 @@ RUN mkdir /var/run/sshd
 
 EXPOSE 22
 
-COPY sshd_config /opt/ssh/config
+COPY sshd_config /opt/ssh/config/sshd
 COPY start.sh /opt/start.sh
 
 ENTRYPOINT /opt/start.sh

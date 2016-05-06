@@ -7,7 +7,7 @@ getent group sftponly || groupadd sftponly
 if [ -d /opt/ssh/authorized_keys ]; then
 	for USER in `ls -1 /opt/ssh/authorized_keys`; do
 		ID=`id -u "$USER"`
-		HOMEDIR="/home/$USER"
+		HOMEDIR="/opt/ssh/data/$USER"
 		if [ -z "$ID" ]; then
 			useradd -g sftponly -d $HOMEDIR "$USER"
 		fi

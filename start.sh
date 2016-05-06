@@ -19,4 +19,7 @@ if [ -d /opt/ssh/authorized_keys ]; then
 	done
 fi
 
+chmod 600 /opt/ssh/server-keys/*
+chmod 644 /opt/ssh/server-keys/*.pub
+
 /usr/sbin/sshd -e -D -f /opt/ssh/config/sshd

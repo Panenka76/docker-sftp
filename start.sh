@@ -23,5 +23,6 @@ fi
 
 chmod 600 /opt/ssh/server-keys/*
 chmod 644 /opt/ssh/server-keys/*.pub
+chmod 755 /opt/ssh/authorized_keys
 
 /usr/sbin/sshd -e -D -f /opt/ssh/config/sshd

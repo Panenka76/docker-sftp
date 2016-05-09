@@ -16,6 +16,7 @@ if [ -d /opt/ssh/authorized_keys ]; then
 		mkdir -p $HOMEDIR/upload
 		chown $USER $HOMEDIR/upload
 		chmod 0750 $HOMEDIR/upload
+		chown $USER /opt/ssh/authorized_keys/$USER
 		chmod 0600 /opt/ssh/authorized_keys/$USER
 	done
 fi
